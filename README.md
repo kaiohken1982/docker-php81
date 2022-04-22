@@ -2,13 +2,20 @@
 
 Immagine per la gestione di php8.1 come servizio
 
+## Creare volume e network
+
+Volume e network saranno usati da molteplici immagini 
+
+docker create volume php-services
+docker create network dockerlocale
+
 ## Per il build dell'immagine
 
 docker build -f php81.Dockerfile -t docker-locale/php81 .
 
 ## Per lanciare il container
 
-docker run -id docker-locale/php81 bash
+docker run -id -v php-services:/srv --network dockerlocale --net-alias php81 docker-locale/php81 bash
 
 ## abilitare porta 9000 in phpFpm
 
