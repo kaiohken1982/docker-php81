@@ -26,7 +26,7 @@ service php8.1-fpm status
 
 ## Aggiornare immagine locale con le modifiche
 
-docker commit <CONTAINER-ID> docker-locale/base
+docker commit <CONTAINER-ID> docker-locale/php81
 
 ## Stoppare il container
 
